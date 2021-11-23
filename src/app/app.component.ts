@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'personalWebsite';
+
+  hideBurger() {
+    console.log("Boton pulsado")
+  }
 }
