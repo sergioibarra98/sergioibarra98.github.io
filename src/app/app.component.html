@@ -1,5 +1,5 @@
 <div id="app">
-    <div id="navbar" class="bg-gray-100 pl-5 pr-5 grid grid-cols-1 divide-y border border-b-2 shadow-md sm:flex sm:flex-justify-start sm:items-stretch sm:divide-x sm:divide-y-0 sm:p-3">
+    <nav id="navbar" class="bg-gray-100 pl-5 pr-5 grid grid-cols-1 divide-y border border-b-2 shadow-md sm:flex sm:flex-justify-start sm:items-stretch sm:divide-x sm:divide-y-0 sm:p-3">
         <div class="p-4 flex items-center justify-between sm:pt-0 sm:pb-0">
             <button (click)="hideBurger()">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 sm:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -11,12 +11,14 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
             </svg>
         </div>
-        <button class="button-navbar">Home</button>
-        <button class="button-navbar">Proyectos</button>
-    </div>
+        <a class="button-navbar" routerLink="">Home</a>
+        <a class="button-navbar" routerLink="">Proyectos</a>
+    </nav>
 </div>
 
 <div id="burger" class="hidden">
-    <button class="button-navbar">Home</button>
-    <button class="button-navbar">Proyectos</button>    
+    <a class="button-navbar" routerLink="['/home']">Home</a>
+    <a class="button-navbar">Proyectos</a>    
 </div>
+
+<router-outlet></router-outlet>
