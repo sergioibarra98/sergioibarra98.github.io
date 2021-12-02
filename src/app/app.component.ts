@@ -6,9 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'personalWebsite';
+  public burger: boolean;
+
+  constructor() {
+    this.burger = true;
+  }
 
   hideBurger() {
-    console.log("Boton pulsado")
+    if (this.burger == false) {
+      this.burger = true;
+    } else {
+      this.burger = false;
+    }
   }
 }
