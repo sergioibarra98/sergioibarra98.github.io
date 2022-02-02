@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import tippy, { animateFill } from 'tippy.js';
+import tippy from 'tippy.js';
 
 @Component({
   selector: 'app-home',
@@ -7,14 +7,21 @@ import tippy, { animateFill } from 'tippy.js';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  public blurApp: boolean;
 
-  constructor() { }
+  constructor() { 
+    this.blurApp = false;
+  }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     tippy('[data-tippy-content]', {
       placement: "bottom",
       arrow: false,
     });
+  }
+
+  isHover(value:boolean) {
+    this.blurApp = value;
   }
 
 }

@@ -22,14 +22,8 @@
     <h3>PCB</h3>
 
     <div class="flex flex-row flex-wrap flex-initial place-items-center gap-4 m-3">     
-            <div data-tippy-content="KiCad" class="">
-                <img src="../../../assets/images/KiCad.jpg" alt="KiCad" class="application">
-            </div>
-            <div data-tippy-content="Altium" class="">
-                <img src="../../../assets/images/Altium.png" alt="Altium" class="application">
-            </div>
-            <div data-tippy-content="Mentor Pads" class="">
-                <img src="../../../assets/images/Mentor.jpg" alt="Mentor" class="application">
-            </div>
+            <application data-tippy-content="KiCad" name="KiCad" logo="../../../assets/images/KiCad.jpg" (mouseover)="isHover(true)" (mouseout)="isHover(false)" [ngClass]="{'blur-sm': blurApp}"></application>
+            <application data-tippy-content="Altium" name="Altium" logo="../../../assets/images/Altium.png" (mouseover)="isHover(true)" (mouseout)="isHover(false)" [ngClass]="{'blur-sm': blurApp}"></application>
+            <application data-tippy-content="Mentor" name="Mentor" logo="../../../assets/images/Mentor.jpg" (mouseover)="isHover(true)" (mouseout)="isHover(false)" [ngClass]="{'blur-sm': blurApp}"></application>
     </div>
 </div>
