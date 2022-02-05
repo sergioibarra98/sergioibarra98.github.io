@@ -7,10 +7,9 @@ import tippy from 'tippy.js';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public blurApp: boolean;
+  public hover:boolean = false;
 
   constructor() { 
-    this.blurApp = false;
   }
 
   ngOnInit(): void { 
@@ -18,10 +17,6 @@ export class HomeComponent implements OnInit {
       placement: "bottom",
       arrow: false,
     });
-  }
-
-  isHover(value:boolean) {
-    this.blurApp = value;
   }
 
 }

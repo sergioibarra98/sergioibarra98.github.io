@@ -6,30 +6,26 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./application.component.css']
 })
 export class ApplicationComponent implements OnInit {
-  @Input() name: string;
-  @Input() logo: string;
-  @Output() isHover = new EventEmitter();
+  @Input() name: string = "";
+  @Input() logo: string = "";
+  @Input() isHover: boolean = false;
+  @Output() isHoverChange = new EventEmitter<boolean>();
   
-  public id: string;
-  public hover: boolean;
+  public id: string = "App-";
 
-  constructor() { 
-    this.name = "";
-    this.logo = "";
-    this.id = "";
-    this.hover = false;
-  }
+  constructor() { }
 
   ngOnInit(): void {
-    this.id = 'App-' + this.name;
+    this.id += this.name;
   }
 
-  launch(event:Event, value:boolean) {
-    console.log(event);
-    this.hover = value;
-    this.isHover.emit(this.hover);
+  onHover() {
+    this.isHover = true;
+    this.isHoverChange.emit(this.isHover);
   }
 
-
-
+  onHoverOut() {
+    this.isHover = false;
+    this.isHoverChange.emit(this.isHover);
+  }
 }
